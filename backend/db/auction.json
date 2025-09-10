@@ -1,6 +1,6 @@
 {
   "auction": {
-    "isOpen": true,
+    "isOpen": false,
     "endTime": null
   }
 }

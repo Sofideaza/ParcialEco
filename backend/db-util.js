@@ -16,6 +16,9 @@ const db = {
   load(collection) {
     const filePath = path.join(DB_DIR, `${collection}.json`)
     if (!fs.existsSync(filePath)) {
+      if (collection === 'auction') {
+        return { isOpen: false, endTime: null }
+      }
       return []
     }
     const data = fs.readFileSync(filePath, 'utf8')
@@ -24,19 +27,29 @@ const db = {
 
   add(collection, item) {
     const data = this.load(collection)
-    data.push(item)
+    if (Array.isArray(data)) {
+      data.push(item)
+    } else {
+      return Object.assign(data, item)
+    }
     this.save(collection, data)
     return item
   },
 
   find(collection, predicate) {
     const data = this.load(collection)
+    if (Array.isArray(data)) {
+      return data.find(predicate)
+    } 
     return data.find(predicate)
   },
 
   findAll(collection, predicate) {
     const data = this.load(collection)
-    return predicate ? data.filter(predicate) : data
+    if (!Array.isArray(data)) {
+      return predicate ? data.filter(predicate) : data
+    }
+    return data
   }
 }
 
