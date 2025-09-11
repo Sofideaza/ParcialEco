@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor APP</title>
+    <link rel="stylesheet" href="/players-app/styles.css">
+</head>
+<body>
+    <h1>Monitor APP - Subasta</h1>
+    
+    <div class="controls">
+        <button id="open-btn">Abrir Subasta</button>
+        <button id="close-btn" disabled>Cerrar Subasta</button>
+    </div>
+    
+    <div id="timer">1:00</div>
+    
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Base</th>
+                <th>Puja Más Alta</th>
+                <th>Postor Líder</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody id="items-table">
+
+        </tbody>
+    </table>
+
+    <script src="/players-app/index.js"></script>
+</body>
+</html>
