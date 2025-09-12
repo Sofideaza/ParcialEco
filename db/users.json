@@ -1,2 +1,30 @@
 [
+  {
+    "id": 1,
+    "name": "sofia",
+    "balance": 1000,
+    "bids": []
+  },
+  {
+    "id": 2,
+    "name": "lu",
+    "balance": 1000,
+    "bids": [
+      {
+        "itemId": 10,
+        "amount": 302
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "jose",
+    "balance": 1000,
+    "bids": [
+      {
+        "itemId": 10,
+        "amount": 343
+      }
+    ]
+  }
 ]

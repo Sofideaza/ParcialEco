@@ -2,5 +2,7 @@
   "auction": {
     "isOpen": false,
     "endTime": null
-  }
+  },
+  "isOpen": true,
+  "endTime": "2025-09-11T21:47:51.799Z"
 }

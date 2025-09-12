@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitor APP</title>
-    <link rel="stylesheet" href="/players-app/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor APP</title>
+  <link rel="stylesheet" href="/monitor-app/styles.css" />
 </head>
 <body>
-    <h1>Monitor APP - Subasta</h1>
-    
-    <div class="controls">
-        <button id="open-btn">Abrir Subasta</button>
-        <button id="close-btn" disabled>Cerrar Subasta</button>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <span class="logo-text">BidBlitz</span>
     </div>
-    
-    <div id="timer">1:00</div>
-    
-    <table class="items-table">
+    <nav class="nav">
+      <a href="/">Inicio</a>
+      <a class="active" href="/monitor-app">Monitor</a>
+      <a href="/players-app">Jugadores</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Subastas en Vivo</h1>
+    <p class="page-subtitle">Actualizaciones en tiempo real</p>
+
+    <div class="timer" id="timer-ui">
+      <div class="time-box"><div class="val" id="t-min">01</div><div class="lbl">Minutos</div></div>
+      <div class="time-box"><div class="val" id="t-sec">00</div><div class="lbl">Segundos</div></div>
+    </div>
+
+    <div class="actions">
+      <button id="open-btn" class="btn btn-primary">Abrir Subasta</button>
+      <button id="close-btn" class="btn btn-ghost" disabled>Cerrar Subasta</button>
+    </div>
+
+    <section>
+      <div id="items-grid" class="grid"></div>
+    </section>
+
+    <section id="results-section" class="results hidden">
+      <h2>Resultados</h2>
+      <table class="table">
         <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Precio Base</th>
-                <th>Puja Más Alta</th>
-                <th>Postor Líder</th>
-                <th>Estado</th>
-            </tr>
+          <tr>
+            <th>Producto</th>
+            <th>Ganador</th>
+            <th>Oferta Final</th>
+          </tr>
         </thead>
-        <tbody id="items-table">
+        <tbody id="results-body"></tbody>
+      </table>
+    </section>
+  </main>
 
-        </tbody>
-    </table>
-
-    <script src="/players-app/index.js"></script>
+  <script src="/monitor-app/index.js"></script>
 </body>
 </html>

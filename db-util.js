@@ -1,4 +1,3 @@
-// db-util.js - Utilidades para la base de datos JSON
 const fs = require('fs');
 const path = require('path');
 
